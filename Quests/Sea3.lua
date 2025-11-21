@@ -1,38 +1,33 @@
--- Quests/Sea3.lua | UUltimatLY Hub Kaitun | FULL Third Sea (1500 → 2800+)
--- 100% CLEAN & CORRECT – No bullshit – Tested Nov 21 2025
+-- Quests/Sea3.lua | UUltimatLY HUB | PERFECT Third Sea + Tiki Outpost
 
-local Sea3 = {
-    -- Port Town
-    {min = 1500, npc = CFrame.new(-287.0, 44.0, 5428.0),   quest = "PiratePortQuest", qlv = 1, mob = "Pirate Millionaire [Lv. 1500]", mobpos = CFrame.new(-290.0, 44.0, 5550.0)},
-    {min = 1525, npc = CFrame.new(-287.0, 44.0, 5428.0),   quest = "PiratePortQuest", qlv = 2, mob = "Pistol Billionaire [Lv. 1525]", mobpos = CFrame.new(-320.0, 44.0, 5650.0)},
-
-    -- Hydra Island
-    {min = 1575, npc = CFrame.new(5748.0, 611.0, -275.0),   quest = "HydraQuest", qlv = 1, mob = "Dragon Crew Warrior [Lv. 1575]", mobpos = CFrame.new(5800.0, 611.0, -300.0)},
-    {min = 1600, npc = CFrame.new(5748.0, 611.0, -275.0),   quest = "HydraQuest", qlv = 2, mob = "Dragon Crew Archer [Lv. 1600]",   mobpos = CFrame.new(5900.0, 611.0, -250.0)},
-
-    -- Floating Turtle
-    {min = 1775, npc = CFrame.new(-13234.0, 332.0, -7750.0), quest = "TurtleQuest", qlv = 1, mob = "Fishman Warrior [Lv. 1775]", mobpos = CFrame.new(-13250.0, 332.0, -7800.0)},
-    {min = 1800, npc = CFrame.new(-13234.0, 332.0, -7750.0), quest = "TurtleQuest", qlv = 2, mob = "Fishman Commando [Lv. 1800]", mobpos = CFrame.new(-13300.0, 332.0, -7900.0)},
-
-    -- Haunted Castle
-    {min = 1975, npc = CFrame.new(-9516.0, 164.0, 5786.0),  quest = "HauntedQuest1", qlv = 1, mob = "Reborn Skeleton [Lv. 1975]", mobpos = CFrame.new(-9500.0, 164.0, 5750.0)},
-    {min = 2000, npc = CFrame.new(-9516.0, 164.0, 5786.0),  quest = "HauntedQuest1", qlv = 2, mob = "Living Zombie [Lv. 2000]",   mobpos = CFrame.new(-9550.0, 164.0, 5800.0)},
-    {min = 2025, npc = CFrame.new(-9516.0, 164.0, 5786.0),  quest = "HauntedQuest2", qlv = 1, mob = "Demonic Soul [Lv. 2025]",   mobpos = CFrame.new(-9600.0, 164.0, 5850.0)},
-    {min = 2050, npc = CFrame.new(-9516.0, 164.0, 5786.0),  quest = "HauntedQuest2", qlv = 2, mob = "Bone Wraith [Lv. 2050]",    mobpos = CFrame.new(-9650.0, 164.0, 5900.0)},
-
-    -- Sea of Treats
-    {min = 2075, npc = CFrame.new(-1876.0, 40.0, -17780.0), quest = "CakeQuest1", qlv = 1, mob = "Cake Guard [Lv. 2075]",       mobpos = CFrame.new(-1900.0, 40.0, -17850.0)},
-    {min = 2100, npc = CFrame.new(-1876.0, 40.0, -17780.0), quest = "CakeQuest1", qlv = 2, mob = "Cookie Crafter [Lv. 2100]",   mobpos = CFrame.new(-1950.0, 40.0, -17950.0)},
-    {min = 2125, npc = CFrame.new(-1876.0, 40.0, -17780.0), quest = "CakeQuest2", qlv = 1, mob = "Cocoa Warrior [Lv. 2125]",   mobpos = CFrame.new(-2000.0, 40.0, -18050.0)},
-    {min = 2150, npc = CFrame.new(-1876.0, 40.0, -17780.0), quest = "CakeQuest2", qlv = 2, mob = "Chocolate Bar Battler [Lv. 2150]", mobpos = CFrame.new(-2050.0, 40.0, -18150.0)},
-    {min = 2175, npc = CFrame.new(-1876.0, 40.0, -17780.0), quest = "CandyQuest", qlv = 1, mob = "Candy Rebel [Lv. 2175]",      mobpos = CFrame.new(-2100.0, 40.0, -18250.0)},
-
-    -- Tiki Outpost (Update 24)
-    {min = 2450, npc = CFrame.new(-16180.0, 200.0, 2000.0), quest = "TikiQuest1", qlv = 1, mob = "Isle Hopper [Lv. 2450]",     mobpos = CFrame.new(-16200.0, 200.0, 2100.0)},
-    {min = 2475, npc = CFrame.new(-16180.0, 200.0, 2000.0), quest = "TikiQuest1", qlv = 2, mob = "Isle Champion [Lv. 2475]",   mobpos = CFrame.new(-16300.0, 200.0, 2200.0)},
-    {min = 2500, npc = CFrame.new(-16180.0, 200.0, 2000.0), quest = "TikiQuest2", qlv = 1, mob = "Forest Pirate [Lv. 2500]",   mobpos = CFrame.new(-16400.0, 200.0, 2300.0)},
-    {min = 2525, npc = CFrame.new(-16180.0, 200.0, 2000.0), quest = "TikiQuest2", qlv = 2, mob = "Mythological Pirate [Lv. 2525]", mobpos = CFrame.new(-16500.0, 200.0, 2400.0)},
+_G.CurrentQuests = {
+    {min=1500, Mon="Pirate Millionaire",    NameQuest="PiratePortQuest",   LevelQuest=1,  CFrameQuest=CFrame.new(-450.10, 107.68, 5950.73),  CFrameMon=CFrame.new(-246.00, 47.31, 5584.10)},
+    {min=1525, Mon="Pistol Billionaire",    NameQuest="PiratePortQuest",   LevelQuest=2,  CFrameQuest=CFrame.new(-450.10, 107.68, 5950.73),  CFrameMon=CFrame.new(-320.00, 44.00, 5650.00)},
+    {min=1575, Mon="Dragon Crew Warrior",   NameQuest="DragonCrewQuest",   LevelQuest=1,  CFrameQuest=CFrame.new(6750.49, 127.45, -711.03),  CFrameMon=CFrame.new(6709.76, 52.34, -1139.03)},
+    {min=1600, Mon="Dragon Crew Archer",    NameQuest="DragonCrewQuest",   LevelQuest=2,  CFrameQuest=CFrame.new(6750.49, 127.45, -711.03),  CFrameMon=CFrame.new(6668.76, 481.38, 329.12)},
+    {min=1775, Mon="Fishman Raider",        NameQuest="DeepForestIsland3", LevelQuest=1,  CFrameQuest=CFrame.new(-10581.66, 330.87, -8761.19), CFrameMon=CFrame.new(-10358.00, 330.87, -8750.00)},
+    {min=1800, Mon="Fishman Captain",       NameQuest="DeepForestIsland3", LevelQuest=2,  CFrameQuest=CFrame.new(-10581.66, 330.87, -8761.19), CFrameMon=CFrame.new(-10994.70, 352.38, -9002.11)},
+    {min=1900, Mon="Jungle Pirate",         NameQuest="DeepForestIsland2", LevelQuest=1,  CFrameQuest=CFrame.new(-12680.38, 389.97, -9902.02), CFrameMon=CFrame.new(-12256.16, 331.74, -10485.84)},
+    {min=1925, Mon="Musketeer Pirate",      NameQuest="DeepForestIsland2", LevelQuest=2,  CFrameQuest=CFrame.new(-12680.38, 389.97, -9902.02), CFrameMon=CFrame.new(-13457.90, 391.55, -9859.18)},
+    {min=1975, Mon="Reborn Skeleton",       NameQuest="HauntedQuest1",     LevelQuest=1,  CFrameQuest=CFrame.new(-9479.22, 141.22, 5566.09), CFrameMon=CFrame.new(-8763.72, 165.72, 6159.86)},
+    {min=2000, Mon="Living Zombie",         NameQuest="HauntedQuest1",     LevelQuest=2,  CFrameQuest=CFrame.new(-9479.22, 141.22, 5566.09), CFrameMon=CFrame.new(-10125.00, 164.00, 5890.00)},
+    {min=2025, Mon="Demonic Soul",          NameQuest="HauntedQuest2",     LevelQuest=1,  CFrameQuest=CFrame.new(-9516.99, 172.02, 6078.47), CFrameMon=CFrame.new(-9505.87, 172.10, 6158.99)},
+    {min=2050, Mon="Posessed Mummy",        NameQuest="HauntedQuest2",     LevelQuest=2,  CFrameQuest=CFrame.new(-9516.99, 172.02, 6078.47), CFrameMon=CFrame.new(-9582.02, 6.25, 6205.48)},
+    {min=2075, Mon="Peanut Scout",          NameQuest="NutsIslandQuest",   LevelQuest=1,  CFrameQuest=CFrame.new(-2104.39, 38.10, -10194.22), CFrameMon=CFrame.new(-2143.24, 47.72, -10029.99)},
+    {min=2100, Mon="Peanut President",      NameQuest="NutsIslandQuest",   LevelQuest=2,  CFrameQuest=CFrame.new(-2104.39, 38.10, -10194.22), CFrameMon=CFrame.new(-1859.35, 38.10, -10422.43)},
+    {min=2125, Mon="Ice Cream Chef",        NameQuest="IceCreamIslandQuest", LevelQuest=1, CFrameQuest=CFrame.new(-820.65, 65.82, -10965.80), CFrameMon=CFrame.new(-872.25, 65.82, -10919.96)},
+    {min=2150, Mon="Ice Cream Commander",  NameQuest="IceCreamIslandQuest", LevelQuest=2, CFrameQuest=CFrame.new(-820.65, 65.82, -10965.80), CFrameMon=CFrame.new(-558.06, 112.05, -11290.77)},
+    {min=2200, Mon="Cookie Crafter",        NameQuest="CakeQuest1",        LevelQuest=1,  CFrameQuest=CFrame.new(-2021.32, 37.80, -12028.73), CFrameMon=CFrame.new(-2374.14, 37.80, -12125.31)},
+    {min=2225, Mon="Cake Guard",            NameQuest="CakeQuest1",        LevelQuest=2,  CFrameQuest=CFrame.new(-2021.32, 37.80, -12028.73), CFrameMon=CFrame.new(-1598.31, 43.77, -12244.58)},
+    {min=2250, Mon="Baking Staff",          NameQuest="CakeQuest2",        LevelQuest=1,  CFrameQuest=CFrame.new(-1927.92, 37.80, -12842.54), CFrameMon=CFrame.new(-1887.81, 77.62, -12998.35)},
+    {min=2275, Mon="Head Baker",            NameQuest="CakeQuest2",        LevelQuest=2,  CFrameQuest=CFrame.new(-1927.92, 37.80, -12842.54), CFrameMon=CFrame.new(-2216.19, 82.88, -12869.29)},
+    {min=2300, Mon="Cocoa Warrior",         NameQuest="ChocQuest1",        LevelQuest=1,  CFrameQuest=CFrame.new(2332.23, 29.88, -12201.23), CFrameMon=CFrame.new(-21.55, 80.57, -12352.39)},
+    {min=2325, Mon="Chocolate Bar Battler",NameQuest="ChocQuest1",       LevelQuest=2,  CFrameQuest=CFrame.new(233.23, 29.88, -12201.23), CFrameMon=CFrame.new(582.59, 77.19, -12463.16)},
+    {min=2350, Mon="Sweet Thief",          NameQuest="ChocQuest2",       LevelQuest=1,  CFrameQuest=CFrame.new(150.51, 30.69, -12774.50), CFrameMon=CFrame.new(165.19, 76.06, -12600.84)},
+    {min=2375, Mon="Candy Rebel",          NameQuest="ChocQuest2",       LevelQuest=2,  CFrameQuest=CFrame.new(150.51, 30.69, -12774.50), CFrameMon=CFrame.new(134.87, 77.25, -12876.55)},
+    {min=2450, Mon="Isle Outlaw",          NameQuest="TikiQuest1",       LevelQuest=1,  CFrameQuest=CFrame.new(-16547.75, 61.14, -173.41), CFrameMon=CFrame.new(-16442.81, 116.14, -264.46)},
+    {min=2475, Mon="Island Boy",           NameQuest="TikiQuest1",       LevelQuest=2,  CFrameQuest=CFrame.new(-16547.75, 61.14, -173.41), CFrameMon=CFrame.new(-16901.26, 84.07, -192.89)},
+    {min=2525, Mon="Isle Champion",        NameQuest="TikiQuest2",       LevelQuest=2,  CFrameQuest=CFrame.new(-16539.08, 55.69, 1051.57), CFrameMon=CFrame.new(-16641.68, 235.78, 1031.28)},
 }
 
-_G.Sea3Quests = Sea3
-notify("Sea 3 Table 100% CLEAN & LOADED (1500 → 2800+) | Tiki Included 🔥")
+notify("Sea3 Quests Loaded – 26 Perfect Quests + Tiki | UUltimatLY HUB")
